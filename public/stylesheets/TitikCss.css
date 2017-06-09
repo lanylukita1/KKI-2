@@ -1,0 +1,312 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.7/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+      body {
+          background-color: #1a1a1a;
+          color: cyan;
+        }
+
+      .backgroundtulisan{
+            background-color: #333333;
+            width: 1250px;
+            height: 10px
+            margin-right: 0px;
+            font-size: 12px;
+      }
+
+      .tree {
+        margin: auto;
+        padding: 50px;
+        background: #1a1a1a;
+      }
+
+      input[type="checkbox"] { display: none; }
+
+      input[type="checkbox"] + label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 20px;
+        font: 14px/20px 'Open Sans', Arial, sans-serif;
+        color: white;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+
+      input[type="checkbox"] + label:last-child { margin-bottom: 0; }
+
+      input[type="checkbox"] + label:before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid cyan;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: .6;
+        -webkit-transition: all .12s, border-color .08s;
+        transition: all .12s, border-color .08s;
+      }
+
+      input[type="checkbox"]:checked + label:before {
+        width: 10px;
+        top: -5px;
+        left: 5px;
+        border-radius: 0;
+        opacity: 1;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      .custom-btn {
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+        width: 120px;
+        font-weight: 20;
+        font-size: 20px;
+        color: white;
+        margin-right: 150px;
+        background: transparent;
+        outline: none !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+      }
+
+      .btn-2 {
+        border: none;
+        border-bottom: 2px solid cyan;
+        border-left: 2px solid cyan;
+      }
+      .btn-2:before, .btn-2:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        top: 0;
+        background: cyan;
+        transition: all 0.3s ease;
+      }
+      .btn-2:before {
+        height: 0%;
+        width: 2px;
+      }
+      .btn-2:after {
+        width: 0%;
+        height: 2px;
+      }
+      .btn-2:hover:before {height: 100%;}
+      .btn-2:hover:after {width: 100%;}
+
+      .myBox{
+        font-size: 1em;
+        border: 2.5px solid #1B8EB9;
+        padding: 6px;
+        color: cyan;
+        font-weight: 300;
+        box-sizing: border-box;
+        text-indent: 6px;
+        -webkit-box-shadow: inset 1px 0px 0px -1px #404040;
+        box-shadow: inset 1px 0px 0px -1px #404040;
+        transition: box-shadow 0.2s, border 0.2s, color 0.2s, background 0.2s;
+        width: 250px;
+         background: linear-gradient(
+           #1a1a1a, #1a1a1a 50%, #333 50%, #333
+        );
+        background-size: 100% 202%;
+      }
+
+      .myBox:focus{
+        color:white;
+        background-position: 100% 100%;
+      }
+
+      tr.h:hover{
+        background-color: #595959;
+      }
+
+      .flex-item-t {
+        background-color: none;
+        width: 100%;
+        height: 80px;
+        padding-left: 14px;
+        /* create the flex container */  
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      .flex {
+        flex: 1;
+      }
+      .hover:hover {
+        flex: 9;
+      }
+
+      /* colours */
+      .color1-dark {
+        background-color: #056767;
+      }
+      .color2-bright {
+        background-color: #ADE6E6;
+      }
+      .green {
+        background-color: green;
+      }
+      .orange {
+        background-color: orange;
+      }
+
+     /* ini untuk animation element*/
+     .subject .icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  left: calc(50% - 20px);
+}
+
+.subject .icon i {
+  width: 40px;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  font-size: 150%;
+  border-radius: 50%;
+  text-align: center;
+}
+/*Category color / icon color*/
+
+.subject .category-color {
+  height: 7px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+.subject.design .category-color,
+.subject.design .icon i {
+  background: #c0392b;
+}
+
+.subject.development .category-color,
+.subject.development .icon i {
+  background: #16a085;
+}
+
+.subject.photography .category-color,
+.subject.photography .icon i {
+  background: #2980b9;
+}
+
+
+.circle {
+  background-color: #ff3385;
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  padding-left: 10px;
+  max-height: 3rem;
+  max-width: 3rem;
+  padding: 10px;
+  text-align: center;
+  margin-top: -15px;
+  margin-left: 550px;
+
+  /* width and height can be anything, as long as they're equal */
+}
+
+.circle:hover{
+  background-color: #e6005c;
+}
+
+#main {
+    width: 100%;
+    height: 15px;
+    border: none;
+    background-color: #056767;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    margin-top: 10px;
+}
+
+#main div {
+    -webkit-flex: 1;  /* Safari 6.1+ */
+    -ms-flex: 1;  /* IE 10 */    
+    flex: 1;
+}
+
+.fa-2x{
+  font-size: 2em;
+}
+
+.table-hover-t {
+  background-color: cyan;
+}
+
+
+.btn-edit {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 1;
+  width: 100px;
+  cursor: pointer;
+  border:none;
+   padding: .3em 1.2em;
+  margin:5px;
+  width: 353px;
+  
+}
+.btn:focus {
+  outline: none;
+}
+
+
+.btn--animated {
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+.btn--animated.btn--border.btn--primary {
+  border: 1px solid lightslategray;
+}
+.btn--animated:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: lightslategray;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+  z-index: -1;
+}
+.btn--animated:hover {
+  color: white;
+}
+.btn--animated:hover:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+          transition-timing-function: cubic-bezier(0.45, 1.64, 0.47, 0.66);
+}

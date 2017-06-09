@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Config - Account</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="Shortcut Icon" href="/images/content/new-icon.png" />
+     <link rel="Stylesheet" href="/stylesheets/theme.css" />
+  <link rel="Stylesheet" href="/stylesheets/template.css" />
+  <link rel="Stylesheet" href="/stylesheets/menustyles.css" />
+  <link rel="Stylesheet" href="/stylesheets/menu_sidebar.css" />
+  <link rel="Stylesheet" href="/stylesheets/TitikCss.css" />
+  <link rel="Stylesheet" href="/stylesheets/fancy.css" />
+  <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!--  <link rel="Stylesheet" href="/stylesheets/typeahead.css" /> -->
+  
+    <script type="text/javascript" src="/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/moment.js"></script>
+    <script type="text/javascript" src="/javascripts/date.js"></script>
+    <script type="text/javascript" src="/javascripts/daterangepicker.js"></script>
+<!--     <script type="text/javascript" src="/javascripts/typeahead.bundle.js"></script> -->
+    
+<!--     <script type="text/javascript" src="/socket.io/socket.io.js"></script>  -->  
+      <script type="text/javascript" src='/views/db_central_account_add.js' ></script>
+  
+   <!-- <script type="text/javascript" src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+       <script type="text/javascript" src="/javascripts/typeahead.bundle.js"></script>  --> 
+      
+    <link rel="Stylesheet" type="text/css" media="all" href="/stylesheets/daterangepicker.css" />
+     
+    <style type="text/css">
+        h3 {   font-family:'Montserrat', sans-serif;
+                text-shadow:1px 1px 2px rgba(34,34,34,0.5)
+            }
+
+        body {
+          background-color: #1a1a1a;
+          color: cyan;
+        }
+
+        .backgroundtulisan{
+            background-color: #333333;
+            width: 1250px;
+            height: 10px
+            margin-right: 0px;
+            font-size: 12px;
+        }
+
+        .myBox{
+          font-size: 1em;
+          border: 2.5px solid #1B8EB9;
+          padding: 6px;
+          color: cyan;
+          font-weight: 300;
+          box-sizing: border-box;
+          height: 34px;
+          text-indent: 6px;
+          -webkit-box-shadow: inset 1px 0px 0px -1px #404040;
+          box-shadow: inset 1px 0px 0px -1px #404040;
+          transition: box-shadow 0.2s, border 0.2s, color 0.2s, background 0.2s;
+          width: 250px;
+           background: linear-gradient(
+             #1a1a1a, #1a1a1a 50%, #333 50%, #333
+          );
+          background-size: 100% 202%;
+        }
+
+        .myBox:focus{
+          color:white;
+          background-position: 100% 100%;
+        }
+
+        .text-blue{
+          color: cyan;
+
+        }
+
+    </style>
+     <script type="text/javascript">
+        var host = '<%= host %>';
+        var frm = new clscentral_account_add();
+        frm.Fn_Initial();
+        
+     </script>
+  </head>
+  <body>
+
+   <% include menu_sidebar.ejs %>
+        
+        
+  <div class="container"  style="padding-top: 70px;">
+    <div class="row">
+
+
+      <div class="col-md-12">
+        
+      </div>
+    </div>
+    
+  <!-- <div class="modal container fade" id="central-userdata" tabindex="-1"
+    role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>Centralized Add User</h3>
+          </div> -->
+
+        
+         <div class="backgroundtulisan col-md-12" style="width:1250px;height:114.1px;margin-right:100px;">
+         <h1 style="color: cyan;">User Management Add</h1>  
+         </div> 
+         <div class="col-sm-8 col-sm-offset-2" > 
+         <br></br>  
+          <div class="modal-body" style="color:white">
+            <div class="container-fluid">
+              <div class="form-group">
+                <label class="control-label">Name-Surname:</label>
+                <input type="text" class="form-control myBox" id="central-user-name-surname" style="width:670px;">
+              </div>
+              <div class="form-group">
+                <label class="control-label">UserName:</label>
+                <input type="text" class="myBox form-control" style="width:670px;" id="central-user-username">
+              </div>
+
+              <div class="form-group">
+                <label class="control-label">Password:</label>
+                <input type="password" class="form-control myBox" id="central-user-password" style="width:670px;">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Password Again:</label>
+                <input type="password" class="form-control myBox" id="central-user-password-again" style="width:670px;">
+              </div>
+
+
+
+              <div class="row">
+                <div class="form-group">
+                  <!-- <label class="control-label col-md-6">StaffID:</label> -->
+                  <label class="control-label col-md-6">Status:</label>
+                  <label class="control-label col-md-6">Role:</label>                  
+                </div>
+              </div>
+              <div class="row">
+              <!--   <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6" id="central-user-staffid">
+                </div> -->
+                <div class="col-md-6">
+                  <select class="myBox col-md-form-control" id="central-user-enable" style="width:320px; border-radius:2px;">
+                    <option value="allow">allow</option>
+                    <option value="lock">lock</option>
+                    <option value="disable">disable</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <select class="myBox form-control" id="central-user-role" style="width:320px; border-radius:2px;">
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="row" style="padding-top:10px">
+                <div class="form-group">
+                  <label class="control-label col-md-6">StartDate:</label>
+                  <label class="control-label col-md-6">ExpireDate:
+                  
+                  <label style=" float: right;"><input type="checkbox" id = "cbnoexpire" value="" style=" float: right;">Non ExpireDate</label>
+               
+                 <!--     
+              <div class="checkbox">    </div>
+          -->
+          </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="myBox form-control col-md-6" id="central-user-startdate" style="width:320px; border-radius:2px; background-color:#1a1a1a;">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6 myBox" id="central-user-expiredate" style="width:320px; border-radius:2px;">
+                </div>
+              </div>
+              
+              <!-- <div class="row" style="padding-top:10px">
+                <div class="form-group">
+                  <label class="control-label col-md-6">DisableStart:</label>
+                  <label class="control-label col-md-6">DisableExpire:
+                    <label style=" float: right;">
+                      <input type="checkbox" id="cbnodisable-user" value="" style=" float: right;">Non DisableDate</label> -->
+                    <!-- <div class="checkbox">    </div>-->
+          
+                  <!-- </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6" id="central-user-disablestart">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6" id="central-user-disableexpire">
+                </div>
+              </div> -->
+              
+<!--               <div class="row" style="padding-top:10px">
+                <div class="form-group">
+
+                  
+                </div>
+              </div>
+              <div class="row">
+                
+              </div> -->
+              <!-- <div class="row" style="padding-top:10px">
+                <div class="form-group">
+                  <label class="control-label col-md-6">BranchID:</label>
+                  <label class="control-label col-md-6">Branchname:</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6" id="central-user-branchid"> -->
+                <!--   <input type="hidden" class="form-control" id="central-user-branchid-old" readonly>
+                  <input type="hidden" class="form-control" id="central-user-branchname-old" readonly>      -->         
+                <!-- </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control col-md-6" id="central-user-branchname" readonly>
+                </div>
+              </div> -->
+              
+              <div class="box row" style="padding-top:10px">
+                <div class="form-group">
+<!--                   <label class="col-md-3 control-label">RegionFilter:</label>
+                  <label class="control-label col-md-3">ZoneFilter:</label> -->
+                  <!-- <label class="control-label col-md-6">BranchFilter:</label> -->
+                  <label class="control-label col-md-6 my">Password policy:</label>
+                </div>
+              </div>
+              <div class="row">
+<!--                 <div class="col-md-3">
+                  <input type="text" class="form-control col-md-6" id="central-user-regionfilter">
+                </div>
+                <div class="col-md-3">
+                  <input type="text" class="form-control col-md-6" id="central-user-zonefilter">
+                </div> -->
+                <div class="col-md-6">
+                  <input type="hidden" class="form-control col-md-6" id="central-user-branchfilter" >
+                  <select class="form-control myBox" style="width:320px; border-radius:2px;" id="central-user-passpolicy">
+                    <option value="1">true</option>
+                    <option value="0">false</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+              </div>
+
+              <span class="alert alert-danger myBox" id="central-user-alert" style="background-color:#1a1a1a; hidden; outline:none; border:none;"></span>
+            </div>
+          </div>
+          <br>
+<!--           <br>
+          <br> -->
+          <div >
+          <div class="" style="margin-left:150px;margin-bottom:130px;">
+            <br>
+            
+            <input type="button" class="button-cancel" id="btn-cancel" value="Cancel" style="width: 150px; border-radius: 0px;">
+            <input type="button" class="button" id="btn-add" value="Add User" style="width: 150px; border-radius: 0px; margin-left: 100px;">
+
+          </div>
+          </div>
+       </div>   
+<!--         </div>
+      </div>
+    </div> -->
+
+  
+
+  </body>
+</html>

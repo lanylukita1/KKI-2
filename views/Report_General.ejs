@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="Shortcut Icon" href="/images/content/new-icon.png" />
+    <link rel="Stylesheet" href="/stylesheets/template.css" />
+    <link rel="Stylesheet" href="/stylesheets/menustyles.css" />
+    <link rel="Stylesheet" href="/stylesheets/menu_sidebar.css" />
+    <link rel="Stylesheet" href="/stylesheets/fancy.css"/>
+    <link rel="Stylesheet" href="/stylesheets/TitikCss.css"/>
+    <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="Stylesheet" type="text/css" media="all" href="/stylesheets/daterangepicker.css" />
+	<link rel="Stylesheet" type="text/css" media="all" href="/stylesheets/bootstrap-datetimepicker.css" />
+		
+    <script type="text/javascript" src="/javascripts/lib/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/javascripts/highcharts.js"></script>
+    <script type="text/javascript" src="/javascripts/modules/exporting.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/angular.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/moment.js"></script>
+    <script type="text/javascript" src="/javascripts/date.js"></script>
+    <script type="text/javascript" src="/javascripts/daterangepicker.js"></script>    
+	 <script type="text/javascript" src="/javascripts/bootstrap-datetimepicker.js"></script>    
+
+     <script type="text/javascript" src="/views/report_general_view.js" ></script> 
+     <script type="text/javascript">
+       var host = '<%= host %>';
+         var frm = new clsReport_General_View();
+         frm.Fn_Initial();
+         
+     </script>
+     <style type="text/css">
+         body{
+            background-color: #1a1a1a;
+           
+         }
+
+         label.desc{
+            color: white;
+            text-align:right;
+         }
+
+         .ftable{
+            color: black;
+         }
+
+         .myBox{
+          font-size: 1em;
+          padding: 6px;
+          color: cyan;
+          font-weight: 300;
+          box-sizing: border-box;
+          height: 34px;
+          text-indent: 6px;
+          -webkit-box-shadow: inset 1px 0px 0px -1px #404040;
+          box-shadow: inset 1px 0px 0px -1px #404040;
+          transition: box-shadow 0.2s, border 0.2s, color 0.2s, background 0.2s;
+          width: 250px;
+           background: linear-gradient(
+             #1a1a1a, #1a1a1a 50%, #333 50%, #333
+          );
+          background-size: 100% 202%;
+          border-radius: 5px;
+        }
+
+        .myBox:focus{
+          color:white;
+          background-position: 100% 100%;
+        }
+     </style>
+    </head>
+    <body>
+        <% include menu_sidebar.ejs %>
+	<div class="container"  style="padding-top: 50px; padding-left: 20px;">
+		<div class="row panel panel-default" style="background-color: #1a1a1a; border-color: #1a1a1a; padding-left: 40px;">
+			<div class="col-md-12 panel-heading" style="background-color: #1a1a1a; border-color: #1a1a1a;">
+				<h3 style="color: cyan; margin-left: 430px;">รายงานทั่วไป</h3>
+                <hr>
+			</div>
+			<div class="col-md-12 panel-body">
+				
+                    <div class="form-inline">
+                        <div class="col-md-5 form-group has-success has-feedback">
+                                <label class="col-md-5 desc">วันที่ : </label>
+                                <input type="text" id="txtStartDate" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
+                                <br>
+                                <label class="col-md-5 desc">ถึง : </label>
+                                <input type="text" id="txtEndDate" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
+                                <br>
+								                <label class="col-md-5 desc">เวลา : </label>
+                                <input type="text" id="txtStartTime" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
+                                <br>
+                                <label class="col-md-5 desc" style="text-align:right;">ถึง : </label>
+                                <input type="text" id="txtEndTime" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
+			                          </div>
+                    </div>
+				   <div class="form-inline">
+                        <div class="col-md-5 form-group has-success has-feedback">
+							<label class="col-md-5 desc">ธุรกรรม : </label>
+							<select id="ddlJob" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
+							</select>
+							<label class="col-md-5 desc">พนักงาน : </label>
+							<select id="ddlEmployee" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
+							</select>
+                        
+							<label class="col-md-5 desc">ช่องบริการ : </label>
+							<select id="ddlCounter" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
+							</select>
+							<label class="col-md-5 desc">สถานะคิว : </label>
+							<select id="ddlStatus" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
+							</select>
+                        </div>
+                 
+            </div>
+               <div class="form-group col-md-2">
+               <button type="submit" id="btnReport" class="circle" title="Search" style="padding: 27px; margin-left: -1px; margin-top: 10px;" >
+              <i class="fa fa-search fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
+            </button>           
+                </div>
+          </div>
+					 <div class="form-inline">
+                        <div class="col-md-6 form-group has-success has-feedback" style="color: white; margin-left: 250px;">
+							<label class="desc" style="text-align:center;" >ประเภทรายงาน : </label>
+							<input type="radio"  id="rdoJob" name="rdoJob" value="job" class="form-control"  checked >ประเภทธุรกรรม
+							<input type="radio"  id="rdoJob" name="rdoJob" value="counter" class="form-control">ประเภทข่องรับบริการ
+							<input type="radio"  id="rdoJob" name="rdoJob" value="employee" class="form-control" >ประเภทพนักงานรับบริการ
+                        </div>
+
+                        <div class="col-md-3">
+                        <button type="submit" id="btnExport" class="circle" title="Export" style="padding: 27px; margin-left: 113px; margin-top: -77px;" >
+              <i class="fa fa-external-link fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
+            </button>   
+                          
+                        </div>
+                 
+                  
+                    <!-- -->
+                    <br/>				    
+                    <div class="form-inline" id="divResult">
+
+                        <table style="width:100%" class='table' >
+  
+							 <thead class='bg-info ftable' style="background-color: #b8facf">
+								<tr style="text-align: center;">
+								<td style="text-align: center;" ><strong>หมายเลขคิว</strong></td>
+								<td style="text-align: center;"><strong>ธุรกรรม</strong></td>
+								<td style="text-align: center;" ><strong>ช่องบริการ</strong></td>
+								<td style="text-align: center;" ><strong>กดคิว</strong></td>
+								<td style="text-align: center;" ><strong>เวลาเริ่มให้บริการ</strong></td>
+								<td style="text-align: center;" ><strong>เวลาสิ้นสุดการให้บริการ</strong></td>
+								<td style="text-align: center;" ><strong>เวลาในการให้บริการ</strong></td>
+								<td style="text-align: center;" ><strong>เวลารอ</strong></td>
+								<td style="text-align: center;" ><strong>สถานะ</strong></td>
+
+								</tr>
+							   
+							</thead>
+							<tbody>
+							</tbody>
+                        </table>
+                    </div>  
+			</div>
+		</div>
+		<!-- Report -->
+           <div id="divResult" class="row" >
+ 
+          </div>
+            
+            <div id="reportContentXls" style="display:none">
+            </div>
+  	</div>
+
+
+    </body>
+</html>

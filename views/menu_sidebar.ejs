@@ -1,0 +1,115 @@
+<% 
+if (!Array.prototype.find) {
+  Array.prototype.find = function(predicate) {
+    if (this === null) {
+      throw new TypeError('Array.prototype.find called on null or undefined');
+    }
+    if (typeof predicate !== 'function') {
+      throw new TypeError('predicate must be a function');
+    }
+    var list = Object(this);
+    var length = list.length >>> 0;
+    var thisArg = arguments[1];
+    var value;
+
+    for (var i = 0; i < length; i++) {
+      value = list[i];
+      if (predicate.call(thisArg, value, i, list)) {
+        return value;
+      }
+    }
+    return undefined;
+  };
+}
+
+function findMenu(Name){
+    return menu.find(function(x){return x.menuName === Name});
+}
+//var roleLevel = user.roleLevel;
+%>  
+
+</div><nav class="main-menu">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>           
+                </li>
+
+                 <li class="has-subnav">
+                    <a href="<%= host %>/config/role">
+                        <i class="fa fa-cog fa-2x"></i>
+                        <span class="nav-text">
+                            Modify Role
+                        </span>
+                    </a>
+                </li>
+
+                <li class="has-subnav">
+                    <a href="<%= host %>/config/central_account">
+                       <i class="fa fa-group fa-2x"></i>
+                        <span class="nav-text">
+                            User Management
+                        </span>
+                    </a>
+                </li>
+
+                <li class="has-subnav">
+                    <a href="<%= host %>/config/branch">
+                       <i class="fa fa-sitemap fa-2x"></i>
+                        <span class="nav-text">
+                            Branch
+                        </span>
+                    </a>  
+                </li>
+
+                <li>
+                    <a href="<%= host %>/reports/general">
+                        <i class="fa fa-book fa-2x"></i>
+                        <span class="nav-text">
+                           General Report
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="<%= host %>/reports/summary">
+                        <i class="fa fa-file-text-o fa-2x"></i>
+                        <span class="nav-text">
+                            Summary Report
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                   <a href="<%= host %>/reports/summary_month">
+                       <i class="fa fa-line-chart fa-2x"></i>
+                        <span class="nav-text">
+                            รายงานสรุปยอดผู้ใช้บริการรายที่ทำการต่อเดือน
+                        </span>
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="logout">
+                <li>
+                   <a href="/changepwd">
+                      <i class="fa fa-unlock-alt fa-2x"></i>
+                        <span class="nav-text">
+                            Change Password
+                        </span>
+                    </a>
+                </li>  <li>
+                   <a href="<%= host %>/logout">
+                         <i class="fa fa-power-off fa-2x"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>

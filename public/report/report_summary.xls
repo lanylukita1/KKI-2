@@ -1,0 +1,16 @@
+
+				        <table class="table table-bordered table-strip table-condensed" id="tbResult">
+					       <thead class="bg-info" style="background-color: #b8facf; color:#1a1a1a;">
+					          	<tr>
+					          		<th colspan="4">รายงานสรุป <span id="lbStart"></span> - <span id="lbEnd"></span></th>
+					        	</tr>
+					        	<tr>
+					        		<th>Counter</th>
+					        		<th>จำนวนคิวที่ให้บริการ</th> 
+					        		<th>เวลารอ</th>
+					        		<th>เวลาให้บริการ</th>
+					        	</tr>
+				 			</thead>
+							 <tbody></tbody>
+						</table>
+					

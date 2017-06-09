@@ -1,0 +1,58 @@
+<% 
+if (!Array.prototype.find) {
+  Array.prototype.find = function(predicate) {
+    if (this === null) {
+      throw new TypeError('Array.prototype.find called on null or undefined');
+    }
+    if (typeof predicate !== 'function') {
+      throw new TypeError('predicate must be a function');
+    }
+    var list = Object(this);
+    var length = list.length >>> 0;
+    var thisArg = arguments[1];
+    var value;
+
+    for (var i = 0; i < length; i++) {
+      value = list[i];
+      if (predicate.call(thisArg, value, i, list)) {
+        return value;
+      }
+    }
+    return undefined;
+  };
+}
+
+function findMenu(Name){
+    return menu.find(function(x){return x.menuName === Name});
+}
+//var roleLevel = user.roleLevel;
+%>  
+
+
+<div class="row">
+    <div class="col-sm-2">
+        <ul>
+            <li><a href='/' class="home"><span>Home</span><i class="entypo-home"></i></a></li>
+
+            <% if(findMenu('Setting') !== undefined){  %>
+            <li>
+                <a href="#" class="setting"><span>Setting</span><i class="entypo-cog"></i></a>                
+            </li>
+            
+            <% } %>
+
+            <li>
+                <a href="#" class="report"><span>Report</span><i class="entypo-doc-text"></i></a>
+            </li>
+
+            <li>
+                <a href='/changepwd' class="profile"><span>Profile</span><i class="entypo-user"></i></a>
+            </li>
+
+            <li>
+                <a href='<%= host %>/logout'  class="logout"><span>Logout</span><i class="entypo-logout"></i></a>
+            </li>
+        </ul> 
+    </div>              
+
+</div>

@@ -1,0 +1,174 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 19px;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1em;
+  line-height: 100px;
+  font-weight: 600;
+  background: #1a1a1a;
+}
+
+ul {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+ul li a {
+  display: block;
+  margin-left: -2px;
+  height: 90px;
+  width: 70px;
+  border-radius: 0 25px 25px 0;
+  border: 2px solid #000;
+  background: #FFF;
+  margin-bottom: 1em;
+  -webkit-transition: width .40s ease;
+  transition: width .40s ease;
+  color: #2980b9;
+  text-decoration: none;
+  line-height: 60px;
+  position: relative;
+}
+
+ul li a:hover {
+  cursor: pointer;
+  width: 200px;
+  color: #fff;
+}
+ul li a:hover span {
+  left: 0;
+}
+ul li a span {
+  padding: 0 1px 0 15px;
+  position: absolute;
+  left: -120px;
+  -webkit-transition: left .6s ease;
+  transition: left .6s ease;
+}
+ul li a i {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+ul li .home {
+  background: rgba(39, 174, 96, 0.1);
+  border-color: #22A7F0;
+  color: #22A7F0;
+  top:100px;
+  right: 672px;
+}
+ul li .home:hover {
+  background: #22A7F0;
+  border-color: #22A7F0;
+}
+
+ul li .setting {
+  background: rgba(39, 174, 96, 0.1);
+  border-color: #D2527F;
+  color: #D2527F;
+  top:100px;
+  right: 672px;
+}
+ul li .setting:hover {
+  background: #D2527F;
+}
+
+ul li .sub_setting {
+  background: rgba(39, 174, 96, 0.1);
+  border-color: blue;
+  color: #D2527F;
+  top:100px;
+  right: 672px;
+}
+ul li .sub_setting:hover {
+  background: #D2527F;
+}
+
+ul li .report {
+  background: rgba(230, 126, 34, 0.1);
+  border-color: #E67E22;
+  color: #E67E22;
+  top:100px;
+  right: 672px;
+}
+ul li .report:hover {
+  background: #E67E22;
+  border-color: #E67E22;
+}
+ul li .profile {
+  background: rgba(34, 167, 240, 0.1);
+  border-color: #27ae60;
+  color: #27ae60;
+  top:100px;
+  right: 672px;
+}
+ul li .profile:hover {
+  background: #27ae60;
+  border-color: #27ae60;
+}
+ul li .logout {
+  background: rgba(210, 82, 127, 0.1);
+  border-color: #FF1913;
+  color: #FF1913;
+  top:100px;
+  right: 672px;
+}
+ul li .logout:hover {
+  background: #FF1913;
+  border-color: #FF1913;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+div {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -60%);
+          transform: translate(-50%, -60%);
+}
+div h1 {
+  font-weight: 600;
+  font-size: 2.4em;
+  color: #303030;
+  margin-bottom: .5em;
+}
+div p {
+  color: #999;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+div a {
+  color: #4183D7;
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px dotted #4183D7;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+div a:hover {
+  color: #D2527F;
+  border-color: #D2527F;
+}

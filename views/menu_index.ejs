@@ -1,0 +1,96 @@
+<% 
+if (!Array.prototype.find) {
+  Array.prototype.find = function(predicate) {
+    if (this === null) {
+      throw new TypeError('Array.prototype.find called on null or undefined');
+    }
+    if (typeof predicate !== 'function') {
+      throw new TypeError('predicate must be a function');
+    }
+    var list = Object(this);
+    var length = list.length >>> 0;
+    var thisArg = arguments[1];
+    var value;
+
+    for (var i = 0; i < length; i++) {
+      value = list[i];
+      if (predicate.call(thisArg, value, i, list)) {
+        return value;
+      }
+    }
+    return undefined;
+  };
+}
+
+function findMenu(Name){
+    return menu.find(function(x){return x.menuName === Name});
+}
+//var roleLevel = user.roleLevel;
+%>  
+
+<div class="pos">
+    <div class="containers" style="width: 304px;">
+      <img src="images/icon_menu/home304px.png" class="image" style="width: 304px; height: 304px;">
+        <div class="middle">
+          <div class="text" style="font-size: 54px;"><a href="/" class="home">Home</a></div>
+        </div>
+    </div>
+    <div class="containers" style="width: 150px; margin-left:307px; margin-top: -304px;">
+      <img src="images/icon_menu/role150px.png" style="width: 150px; height: 150px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text" style="font-size: 24px;"><a href="<%= host %>/config/role" class="home">Modify Role</a></div>
+        </div>
+    </div>
+   
+    <div class="containers" style="width: 150px; margin-left:307px; margin-top: 3px;">
+      <img src="images/icon_menu/user150px.png" style="width: 150px; height: 151px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text" style="font-size: 24px;"><a href="<%= host %>/config/central_account" class="home">User Management</a></div>
+        </div>
+    </div>
+
+    <div class="containers" style="width: 458px; margin-top: 2px;">
+      <img src="images/icon_menu/branch458x204px.png" style="width: 457px; height: 204px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text" style="font-size: 42px;"><a href="<%= host %>/config/branch" class="home">Branch</a></div>
+        </div>
+    </div>   
+    
+    <div class="containers" style="width: 304px; margin-left: 461px; margin-top: -302px;">
+      <img src="images/icon_menu/general304px.png" style="width: 304px; height: 302px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text"><a href="<%= host %>/reports/general" class="home">General Report</a></div>
+        </div>
+    </div>   
+    
+    <div class="containers" style="width: 304px; margin-left: 461px; margin-top: -510px;">
+      <img src="images/icon_menu/summari304x205px.png" style="width: 304px; height: 205px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text"><a href="<%= host %>/reports/summary" class="home">Summary Report</a></div>
+        </div>
+    </div>
+
+     <div class="containers" style="width: 204px; margin-left: 768px; margin-top: -205px;">
+      <img src="images/icon_menu/monthly204x514.png" style="width: 204px; height: 510px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text"><a href="<%= host %>/reports/summary_month" class="home">Monthly Report
+          </a></div>
+        </div>
+    </div>
+
+    <div class="containers" style="width: 255px; margin-left: 975px; margin-top: -510px;">
+      <img src="images/icon_menu/password255px.png" style="width: 255px; height: 253px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text"><a href="/changepwd" class="home">Change Password</a></div>
+        </div>
+    </div>
+    <div class="containers" style="width: 255px; margin-left: 975px; margin-top: 4px;">
+      <img src="images/icon_menu/logout255px.png" style="width: 255px; height: 253px;" alt="Avatar" class="image">
+        <div class="middle">
+          <div class="text"><a href="<%= host %>/logout" class="home">Logout</a></div>
+        </div>
+    </div>
+    <!--
+    <img  margin-left: 977px; margin-top: -377px;">
+    <img  margin-left: 977px; margin-top: -65px;">-->
+</div>
