@@ -2,7 +2,7 @@
 				        <table class="table table-bordered table-strip table-condensed" id="tbResult">
 					       <thead class="bg-info" style="background-color: #b8facf; color:#1a1a1a;">
 					          	<tr>
-					          		<th colspan="4">รายงานสรุป <span id="lbStart"></span> - <span id="lbEnd"></span></th>
+					          		<th colspan="4">รายงานสรุป <span id="lbStart">13/06/2017</span> - <span id="lbEnd">18/06/2017</span></th>
 					        	</tr>
 					        	<tr>
 					        		<th>Counter</th>

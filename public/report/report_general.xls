@@ -2,7 +2,7 @@
 
                         <table style="width:100%" class="table">
   
-							 <thead class="bg-info ftable">
+							 <thead class="bg-info ftable" style="background-color: #b8facf">
 								<tr style="text-align: center;">
 								<td style="text-align: center;"><strong>หมายเลขคิว</strong></td>
 								<td style="text-align: center;"><strong>ธุรกรรม</strong></td>
