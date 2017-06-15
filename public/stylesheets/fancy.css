@@ -45,6 +45,7 @@ input.button:hover{
 	color:rgba(255, 255, 255, 1);
 	background-color:#00cccc;
 	background-position: -100% 100%;
+  border: 1px solid white;
 }
 
 /* BTN CANCEL */
@@ -72,6 +73,7 @@ input.button-cancel:hover{
   color:rgba(255, 255, 255, 1);
   background-color:red;
   background-position: -100% 100%;
+  border: 1px solid white;
 }
 
 input.button-edit{
@@ -171,4 +173,61 @@ input[type="password"][required] + label[placeholder]:before {
 .dropbtn:hover, .dropbtn:focus{
  background-color: #63c5e9;
  color: white;
+}
+
+/* COLLAPSE BUTTON */
+
+* {
+  box-sizing: border-box;
+}
+
+.open-close-button {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  border: 0.1em solid #1e6262;
+  margin: 0.1em 45%;
+  font-size: 3em;
+  border-radius: 50%;
+  position: relative;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -moz-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.open-close-button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #1e6262;
+  width: 80%;
+  height: 10%;
+  left: 10%;
+  top: 47%;
+}
+.open-close-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #1e6262;
+  width: 10%;
+  height: 80%;
+  left: 47%;
+  top: 10%;
+}
+.open-close-button.open {
+  background-color: #1e6262;
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+.open-close-button.open:after {
+  background-color: #ADE6E6;
+}
+.open-close-button.open:before {
+  background-color: #ADE6E6;
 }

@@ -71,16 +71,16 @@
    		<div class='col-md-12'>
 		<div class="panel panel-default" style="background-color: #1a1a1a; border-color: #1a1a1a;">
 			<div class="panel-heading" style="background-color: #1a1a1a; border-color: #1a1a1a;">
-				<h3 style="color: cyan; margin-left: 430px;">รายงานแสดงรายวัน</h3>
+				<h3 style="color: cyan; text-align: center;">Summary Report</h3>
 				<hr>
 			</div>
 			<div class="panel-body">
 				<div class="form-group row">
-					<label for="txtStartDate" class="col-md-1 control-label text-rigth desc" style='text-align: right;margin-top: 5px'>วันที่ </label>
+					<label for="txtStartDate" class="col-md-1 control-label text-rigth desc" style='text-align: right;margin-top: 5px'>Date</label>
 					<div class="form-group col-md-2">
 					  <input type="text" class="form-control myBox" id="txtStartDate" >
 					</div>
-					<label for="txtEndDate" class="col-md-1 control-label text-rigth desc" style='text-align: right;margin-top: 5px'>ถึง วันที่ </label>
+					<label for="txtEndDate" class="col-md-1 control-label text-rigth desc" style='text-align: right;margin-top: 5px'>Until</label>
 					<div class="form-group col-md-2">
 					  <input type="text" class="form-control myBox" id="txtEndDate" >
 					</div>
@@ -89,7 +89,7 @@
               <i class="fa fa-search fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
             </button>
           <button type="submit" id="btnExport" class="circle" title="Export XLS" style="padding: 27px; margin-left: -70px; " >
-              <i class="fa fa-external-link fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
+              <i class="fa fa-external-link fa-2x" style="margin-top: -13px; margin-left: -29px; "></i>
             </button>
 					</div>
           		</div>
@@ -100,13 +100,13 @@
 				        <table class='table table-bordered table-strip table-condensed' id='tbResult'>
 					       <thead class='bg-info' style="background-color: #b8facf; color:#1a1a1a;">
 					          	<tr>
-					          		<th colspan='4' >รายงานสรุป <span id='lbStart'></span> - <span id='lbEnd'></span></th>
+					          		<th colspan='4'><span id='lbStart'></span> - <span id='lbEnd'>Summary Report</span></th>
 					        	</tr>
 					        	<tr>
 					        		<th>Counter</th>
-					        		<th>จำนวนคิวที่ให้บริการ</th> 
-					        		<th>เวลารอ</th>
-					        		<th>เวลาให้บริการ</th>
+					        		<th>Number of Queues Served</th> 
+					        		<th>Waiting Time</th>
+					        		<th>Service Time</th>
 					        	</tr>
 				 			</thead>
 							 <tbody></tbody>

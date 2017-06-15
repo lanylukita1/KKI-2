@@ -78,39 +78,39 @@
 	<div class="container"  style="padding-top: 50px; padding-left: 20px;">
 		<div class="row panel panel-default" style="background-color: #1a1a1a; border-color: #1a1a1a; padding-left: 40px;">
 			<div class="col-md-12 panel-heading" style="background-color: #1a1a1a; border-color: #1a1a1a;">
-				<h3 style="color: cyan; margin-left: 430px;">รายงานทั่วไป</h3>
+				<h3 style="color: cyan; text-align: center;">General Report</h3>
                 <hr>
 			</div>
 			<div class="col-md-12 panel-body">
 				
                     <div class="form-inline">
                         <div class="col-md-5 form-group has-success has-feedback">
-                                <label class="col-md-5 desc">วันที่ : </label>
+                                <label class="col-md-5 desc">Date : </label>
                                 <input type="text" id="txtStartDate" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
                                 <br>
-                                <label class="col-md-5 desc">ถึง : </label>
+                                <label class="col-md-5 desc">To : </label>
                                 <input type="text" id="txtEndDate" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
                                 <br>
-								                <label class="col-md-5 desc">เวลา : </label>
+								                <label class="col-md-5 desc">Time : </label>
                                 <input type="text" id="txtStartTime" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
                                 <br>
-                                <label class="col-md-5 desc" style="text-align:right;">ถึง : </label>
+                                <label class="col-md-5 desc" style="text-align:right;">To : </label>
                                 <input type="text" id="txtEndTime" class="col-md-1 form-control myBox" style="width:150px;margin-right:10px; border: 2.5px solid #1B8EB9;"/>
 			                          </div>
                     </div>
 				   <div class="form-inline">
                         <div class="col-md-5 form-group has-success has-feedback">
-							<label class="col-md-5 desc">ธุรกรรม : </label>
-							<select id="ddlJob" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
+							<label class="col-md-5 desc">Transaction : </label>
+							<select id="ddlJob" class="col-md-2 form-control myBox" style="width:200px; border: 2.5px solid #1B8EB9;">
 							</select>
-							<label class="col-md-5 desc">พนักงาน : </label>
+							<label class="col-md-5 desc">Staff : </label>
 							<select id="ddlEmployee" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
 							</select>
                         
-							<label class="col-md-5 desc">ช่องบริการ : </label>
+							<label class="col-md-5 desc">Service Box : </label>
 							<select id="ddlCounter" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
 							</select>
-							<label class="col-md-5 desc">สถานะคิว : </label>
+							<label class="col-md-5 desc">Queue Status : </label>
 							<select id="ddlStatus" class="col-md-2 form-control myBox"  style="width:200px; border: 2.5px solid #1B8EB9;">
 							</select>
                         </div>
@@ -124,15 +124,15 @@
           </div>
 					 <div class="form-inline">
                         <div class="col-md-6 form-group has-success has-feedback" style="color: white; margin-left: 250px;">
-							<label class="desc" style="text-align:center;" >ประเภทรายงาน : </label>
-							<input type="radio"  id="rdoJob" name="rdoJob" value="job" class="form-control"  checked >ประเภทธุรกรรม
-							<input type="radio"  id="rdoJob" name="rdoJob" value="counter" class="form-control">ประเภทข่องรับบริการ
-							<input type="radio"  id="rdoJob" name="rdoJob" value="employee" class="form-control" >ประเภทพนักงานรับบริการ
+							<label class="desc" style="text-align:center;" >Report Type : </label>
+							<input type="radio"  id="rdoJob" name="rdoJob" value="job" class="form-control"  checked >Transaction Type
+							<input type="radio"  id="rdoJob" name="rdoJob" value="counter" class="form-control">Service Type
+							<input type="radio"  id="rdoJob" name="rdoJob" value="employee" class="form-control" >Type of Service Staff
                         </div>
 
                         <div class="col-md-3">
                         <button type="submit" id="btnExport" class="circle" title="Export" style="padding: 27px; margin-left: 113px; margin-top: -77px;" >
-              <i class="fa fa-external-link fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
+              <i class="fa fa-external-link fa-2x" style="margin-top: -12px; margin-left: -29px; "></i>
             </button>   
                           
                         </div>
@@ -146,15 +146,15 @@
   
 							 <thead class='bg-info ftable' style="background-color: #b8facf">
 								<tr style="text-align: center;">
-								<td style="text-align: center;" ><strong>หมายเลขคิว</strong></td>
-								<td style="text-align: center;"><strong>ธุรกรรม</strong></td>
-								<td style="text-align: center;" ><strong>ช่องบริการ</strong></td>
-								<td style="text-align: center;" ><strong>กดคิว</strong></td>
-								<td style="text-align: center;" ><strong>เวลาเริ่มให้บริการ</strong></td>
-								<td style="text-align: center;" ><strong>เวลาสิ้นสุดการให้บริการ</strong></td>
-								<td style="text-align: center;" ><strong>เวลาในการให้บริการ</strong></td>
-								<td style="text-align: center;" ><strong>เวลารอ</strong></td>
-								<td style="text-align: center;" ><strong>สถานะ</strong></td>
+								<td style="text-align: center;" ><strong>Queue number</strong></td>
+								<td style="text-align: center;"><strong>Transaction</strong></td>
+								<td style="text-align: center;" ><strong>Service box</strong></td>
+								<td style="text-align: center;" ><strong>Press the Cue</strong></td>
+								<td style="text-align: center;" ><strong>Service Start Time</strong></td>
+								<td style="text-align: center;" ><strong>Service End Time</strong></td>
+								<td style="text-align: center;" ><strong>Time of Service</strong></td>
+								<td style="text-align: center;" ><strong>Waiting Time</strong></td>
+								<td style="text-align: center;" ><strong>Status</strong></td>
 
 								</tr>
 							   

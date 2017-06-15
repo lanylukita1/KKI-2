@@ -61,7 +61,25 @@
         background-position: 100% 100%;
       }
 
+
     </style>
+    <script type="text/javascript">
+      (function() {
+  var openclose;
+
+  openclose = function() {
+    return $(".open-close-button").click(function() {
+      return $(this).toggleClass("open");
+    });
+  };
+
+  jQuery(document).ready(function($) {
+    return openclose();
+  });
+
+}).call(this);
+
+    </script>
   </head>
 
   <body>
@@ -83,7 +101,7 @@
           <form method="get" action="/config/role/add">
           <div id="main">
             <div>
-                <button type="submit" id="btnAdd" class="circle" style="float: right;" >
+                <button type="submit" id="btnAdd" class="circle" title="Add Role" style="float: right;" >
               <i class="fa fa-plus fa-2x" style="margin-left: -17px; margin-top: -2px;"></i>
             </button>
           </div>
@@ -108,9 +126,10 @@
 					<tbody>
 						<% for(i = 0 ; i < data.length ; i++) { %>
 
-						<tr data-toggle="collapse" data-target="#<%= data[i]._id %>" class="accordion-toggle">
-							<td class="text-center"><button class="btn btn-default btn-xs" style="background-color:cyan; "><i class="fa fa-plus fa-2x" style="position:center; background-color:cyan; padding-top:7px;"></i></button></td>
-							<td class="text-center"><%= data[i].roleName %></td>
+						<tr class="accordion-toggle">
+							<td class="text-center"><div class='open-close-button' data-toggle="collapse" data-target="#<%= data[i]._id %>"></div>
+              </td>
+							<td class="text-center" style="text-indent;"><%= data[i].roleName %></td>
 							<td class="text-center"><%= data[i].Discription %></td>
 							<td class="text-center">
 
