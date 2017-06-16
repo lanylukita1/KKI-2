@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Config - Role</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="Shortcut Icon" href="/images/content/new-icon.png" />
+    <link rel="Stylesheet" href="/stylesheets/theme.css" />
+    <link rel="stylesheet" href="/stylesheets/w3css.css">
+    <link rel="stylesheet" href="/stylesheets/TitikCss.css">
+    <link rel="stylesheet" href="/stylesheets/fancy.css">
+    <link rel="Stylesheet" href="/stylesheets/menu_sidebar.css" />
+
+    <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/javascripts/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/javascripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/views/config_role_view.js"></script>
+    
+    <style>
+    body{
+    	background-color: #1a1a1a;
+    	color: white;
+    }
+
+   	.blue {
+   		background-color: #1B8EB9;
+
+   	}
+   	.afterblue{
+   		/*border: 2.5px solid #1B8EB9;*/
+   		background-color: #1a1a1a;
+   	}
+
+   	.bluewhite{
+   		margin-top: 10px;
+   		background-color: #bce6f5;
+   		color: black;
+   	}
+
+   	.myBox{
+        font-size: 1em;
+        border: 2.5px linear-gradient #1B8EB9;
+        padding: 6px;
+        font-weight: 300;
+        box-sizing: border-box;
+        text-indent: 6px;
+        -webkit-box-shadow: inset 1px 0px 0px -1px #404040;
+        box-shadow: inset 1px 0px 0px -1px #404040;
+        transition: box-shadow 0.2s, border 0.2s, color 0.2s, background 0.2s;
+        width: 250px;
+         background: linear-gradient(
+           black, black 50%, #333 50%, #333
+        );
+        background-size: 100% 202%;
+      }
+
+      .myBox:focus{
+        color:black;
+        background-position: 100% 100%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+  	<% include menu_sidebar.ejs %>
+
+	<div class="container" style="padding-top: 70px;">
+		<div class="row">
+			<div class="col-md-12 flex-item-t">
+					<div class="color1-dark hover flex"><h1 style="padding-left:10px; ">Role</h1></div>
+					<div class="color2-bright hover flex"></div>
+					<div class="color2-bright hover flex"></div>
+					<div class="color2-bright hover flex"></div>
+					<div class="color2-bright hover flex"></div>
+			</div>
+		</div>
+		<div class="row" style="padding-top:20px">
+		</div> 
+          <% if(menu.find(function(x){return x.menuName === 'Modify Role'}) !== undefined)%> <% { %>  
+          <form method="get" action="/config/role/add">
+          <div id="main">
+            <div>
+                <button type="submit" id="btnAdd" class="circle" style="float: right;" >
+              <i class="fa fa-plus fa-2x" style="margin-left: -17px; margin-top: -2px;"></i>
+            </button>
+          </div>
+          </div>
+          </form>
+          <% } %>
+
+		<div style="padding-top:0px;margin-top: -8px; width:100%;">
+		
+				<table id='tbresult' class="table table-hover" style="color:#1a1a1a; background-color:#ADE6E6; font-size: 17px;">
+					<thead>
+						<tr style="background-color:#056767;">
+						<th style="width:2%">&nbsp;</th>
+						<th class="text-center textC">Role</th>
+						<th class="text-center textC">Description</th>
+						<th class="text-center textC" width="20%">Action</th>
+						</tr>
+					</thead>
+          </div>
+         
+           </div>
+					<tbody>
+						<% for(i = 0 ; i < data.length ; i++) { %>
+
+						<tr data-toggle="collapse" data-target="#<%= data[i]._id %>" class="accordion-toggle">
+							<td class="text-center"><button class="btn btn-default btn-xs" style="background-color:cyan; "><i class="fa fa-plus fa-2x" style="position:center; background-color:cyan; padding-top:7px;"></i></button></td>
+							<td class="text-center"><%= data[i].roleName %></td>
+							<td class="text-center"><%= data[i].Discription %></td>
+							<td class="text-center">
+
+							<% if(menu.find(function(x){return x.menuName === 'Modify Role'}) !== undefined)%> <%{ %>
+
+                  <button class="btn-edit btn--animated" style="background-color:#007777; color:white; width: 50px; height:40px;" onclick="EditItem('<%= data[i]._id %>')"><i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-left:-24px; margin-top:2px ;font-size:30px;"></i></button>
+
+									<button class="btn-edit btn--animated" style="background-color:#FF0023; color:white; width: 50px; height:40px;" onclick="DelItem('<%= data[i]._id %>')"><i class="fa fa-trash" aria-hidden="true" style="margin-left:-25.5px; margin-top:1px ;font-size:30px;"></i>
+</button>
+
+               <% } %>
+
+              
+						</td>
+						</tr>
+						<tr>
+           					<td colspan="12" class="hiddenRow">
+           					<div class="accordian-body collapse" id="<%= data[i]._id %>">
+           					<table class="table">
+           						<thead>
+           							<tr class="success">
+           							<th class="text-center" width="35%">Menu</th>
+           							<th class="text-left" width="5%">Discription</th>
+           							</tr>
+           						</thead>
+           						<tbody>
+           							<% for(j = 0 ; j < data[i].menu.length ; j++){ %>
+           								<tr> 
+           									<td><%= data[i].menu[j].menuName %></td>
+           									<td><%= data[i].discription %></td>
+           								</tr>
+           							<% } %>
+           						</tbody>
+				           					</table>
+				           				</div>
+								    </div>
+							
+           					</div>
+           					</td>
+           				</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+ 	</div>
+  </body>
+</html>

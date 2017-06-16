@@ -64,12 +64,12 @@
    		<div class='col-md-12'>
 		<div class="panel panel-default" style="background-color: #1a1a1a; border-color: #1a1a1a;">
 			<div class="panel-heading" style="background-color: #1a1a1a; border-color: #1a1a1a;">
-				<h3 style="color: cyan; text-align: center;">Monthly Report</h3>
+				<h1 style="margin-left: 250px;">รายงานสรุปยอดผู้ใช้บริการรายที่ทำการต่อเดือน</h1>
 				<hr>
 			</div>
 			<div class="panel-body">
           		<div class="form-group row">
-					<label for="txtStartDate" class="col-md-1 control-label text-rigth" style='text-align: right;margin-top: 5px; color: white'>Year :</label>
+					<label for="txtStartDate" class="col-md-1 control-label text-rigth" style='text-align: right;margin-top: 5px; color: white'>ปี :</label>
 					<div class="form-group col-md-2">
 					  <select class='form-control myBox' id='ddlYear'>
 					  </select>
@@ -79,7 +79,7 @@
               <i class="fa fa-search fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
             </button>
 					<button type="submit" id="btnExport" class="circle" title="Export XLS" style="padding: 27px; margin-left: -70px; " >
-              <i class="fa fa-external-link fa-2x" style="margin-top: -13px; margin-left: -29px; "></i>
+              <i class="fa fa-external-link fa-2x" style="margin-top: -14px; margin-left: -30px; "></i>
             </button>
 					</div>
           		</div>
@@ -89,25 +89,25 @@
 				        <table class='table table-bordered table-strip table-condensed' id='tbResult'>
 					       <thead class='bg-info' style="background-color: #b8facf; color: #1a1a1a;">
 					          	<tr>
-					          		<th colspan='13' >Annual Report <span id='lbYear'></span></th>
+					          		<th colspan='13' >รายงานปี <span id='lbYear'></span></th>
 					        	</tr>
 						        <tr>
-						        	<th rowspan="2" style="vertical-align:middle;">Branch</th>
-						        	<th colspan="12">Month</th>
+						        	<th rowspan="2" style="vertical-align:middle;">สาขา</th>
+						        	<th colspan="12">เดือน</th>
 						        </tr>
 						        <tr>
-						          <th>Jan</th>
-						          <th>February</th>
-						          <th>March</th>
-						          <th>April</th>
-						          <th>May</th>      
-						          <th>June</th>      
-						          <th>July</th> 
-						          <th>August</th>               
-						          <th>September</th>       
-						          <th>October</th>               
-						          <th>November</th>       
-						          <th>December</th>   
+						          <th>ม.ค.</th>
+						          <th>ก.พ.</th>
+						          <th>มี.ค.</th>
+						          <th>เม.ย.</th>
+						          <th>พ.ค.</th>      
+						          <th>มิ.ย.</th>      
+						          <th>ก.ค.</th> 
+						          <th>ส.ค.</th>               
+						          <th>ก.ย.</th>       
+						          <th>ต.ค.</th>               
+						          <th>พ.ย.</th>       
+						          <th>ธ.ค.</th>   
 						        </tr>
 					       </thead>
 		       				<tbody></tbody>

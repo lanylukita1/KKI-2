@@ -103,7 +103,8 @@ function findMenu(Name){
                             Change Password
                         </span>
                     </a>
-                </li>  <li>
+                </li>  
+                <li>
                    <a href="<%= host %>/logout">
                          <i class="fa fa-power-off fa-2x"></i>
                         <span class="nav-text">
@@ -112,4 +113,21 @@ function findMenu(Name){
                     </a>
                 </li>  
             </ul>
+            
+               <div class="switcher" style="left:-1100px; background:none;">
+                <ul class="colors-list nav-text" style="left: 0;">
+                    <li><a title="Pink" id="pink" class="pink" ></a></li>
+                    <li><a title="
+                    Cyan" id="cyan" class="cyan" ></a></li>
+                    <li><a title="White" id="white" class="white" ></a></li>
+                    <li><a title="Brown" id="brown" class="brown" ></a></li>
+                </ul>                
+                </div>   
+            </ul> 
         </nav>
+
+<script type="text/javascript" src="/javascripts/styleSwitcher.js"></script>
+
+<link rel="stylesheet" href="/stylesheets/styleSwitcher.css"/>
+<!--PINK STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM FOUR STYLESHEETS (pink,green,blue and brown) HERE-->
+<link rel="stylesheet" id="mainCSS" href="/stylesheets/theme/cyan.css" />

@@ -11,16 +11,25 @@
     <link rel="stylesheet" href="/stylesheets/menustyles.css" />
     <link rel="stylesheet" href="/stylesheets/menu_sidebar.css"/>
     <link href="/stylesheets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-      <link rel="stylesheet" type="text/css" href="SVGRipples/css/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="SVGRipples/css/demo.css" />
-  <link rel="stylesheet" type="text/css" href="SVGRipples/css/component.css" />
-  
+    <link rel="stylesheet" type="text/css" href="SVGRipples/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="SVGRipples/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="SVGRipples/css/component.css" />
+
+    <script type="text/javascript" src="/javascripts/styleSwitcher.js"></script>
+    <link rel="stylesheet" href="/stylesheets/styleSwitcher.css"/>
+    <!--PINK STYLE VERSION IS BY DEFAULT, USE ANY ONE STYLESHEET FROM FOUR STYLESHEETS (pink,green,blue and brown) HERE-->
+    <link rel="stylesheet" id="mainCSS" href="/stylesheets/theme/cyan.css" />
+
     <script type="text/javascript" src="/javascripts/lib/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/javascripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="fr.js"></script>
+    <script type="text/javascript" src="en.js"></script>
+
     <style type="text/css">
+
     body{
- background-image: url('images/background.jpg');
-}
+    background-image: url('images/background.jpg');
+    }
         .vertical-center {
           min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
           min-height: 90vh; /* These two lines are counted as one :-)       */
@@ -30,11 +39,39 @@
         }
     </style>
   </head>
-  <body>
-           <div class="container"  >
-               
-                    <% include menu_index.ejs %>
 
-       </div>
+  <body>
+          <button onclick="loadDemo('en')">Greeting in English</button> 
+          <button onclick="loadDemo('fr')">Greeting in France</button> 
+          <div id="langResult"></div>
+
+          <div class="container" >
+          <!-- / END MULTIPLE LANGUAGE -->
+
+          <div class="switcher" style="left:150px;">
+                <ul class="colors-list nav-text">
+                    <li><a title="Pink" id="pink" class="pink" ></a></li>
+                    <li><a title="Cyan" id="cyan" class="cyan" ></a></li>
+                    <li><a title="White" id="white" class="white" ></a></li>
+                    <li><a title="Brown" id="brown" class="brown" ></a></li>
+                </ul>
+            </div>  
+            <!-- /. END THEME SWITCHER--> 
+                    <% include menu_index.ejs %>
+          </div>
+
+           
   </body>
+
+  <script type="text/javascript" src="lang.js"> </script>
+  <script>
+    function loadDemo(ltype){
+      lang.init(ltype, afterLangLoad);
+    }
+    function afterLangLoad(){
+      var msg = lang.getString('greeting') + " <br />";
+      msg += lang.getString('itemnotfound', ["VCR", "DVD"]); 
+      document.querySelector('#langResult').innerHTML = msg; 
+    }
+  </script>
 </html>

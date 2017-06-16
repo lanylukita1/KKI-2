@@ -180,7 +180,7 @@ if (!Array.prototype.find) {
     %>
     <div class="container">
       <div class="row" style="padding-top:30px">
-        <h3 style="color: cyan;"><%= action %> Role</h3>
+        <h1 style="textC"><%= action %> Role</h1>
         <hr>
       </div>
       <div class="row" style="padding-top:10px">
@@ -190,19 +190,19 @@ if (!Array.prototype.find) {
           <div class="form-group">
             <label class="control-label col-sm-2" style="color: white;" for="rolename"> Role Name :</label>
             <div class=" col-sm-3">
-            <input class="myBox" type="text" name="rolename" id="rolename" value="<%= (action === 'Edit' ? data.roleName : '') %>"/> 
+            <input class="myBox custom-btn-one" type="text" name="rolename" id="rolename" value="<%= (action === 'Edit' ? data.roleName : '') %>"/> 
             </div>         
           </div>
         <div class="form-group">
             <label class="control-label col-sm-2"  style="color: white; for="discription"> Discription :</label>
             <div class=" col-sm-3">
-            <input class="myBox" type="text" name="discription" id="discription" value="<%= (action === 'Edit' ? data.Discription : '') %>"> 
+            <input class="myBox custom-btn-one" type="text" name="discription" id="discription" value="<%= (action === 'Edit' ? data.Discription : '') %>"> 
             </div>         
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="allmenu" style="color: white;">Menu :</label>
             <div  id="tree">
-            <div class="col-sm-5 tree">
+            <div class="col-sm-5 tree custom-btn-one">
               <ul>
                 <li><input id="ch_1" type="checkbox" value="Setting" <% if(findMenu('Setting') !== undefined){ %>checked<% } %> /><label for="ch_1">Setting</label>
                   <ul>
