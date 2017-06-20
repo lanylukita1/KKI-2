@@ -13,4 +13,12 @@ router.get('/', function(req, res, next) {
 						  });
 });
 
+router.get('/en', function(req, res, next){
+	res.render('index_en', {title: 'KTB Report'
+						  ,menu: req.session.userMenu
+						  ,user: req.session.user 
+						  ,host : req.protocol + '://' + req.get('host')
+						  });
+});
+
 module.exports = router;

@@ -45,16 +45,16 @@ db = mongo.db('mongodb://' + config.local.mongo.login + '@' + config.local.mongo
 dbmbedq = mongo.db('mongodb://' + config.mbedq.mongo.login + '@' + config.mbedq.mongo.host+':'+config.mbedq.mongo.port+'/'+config.mbedq.mongo.collection, {native_parser:true});
 
 var checkLogin = function(req,res,next){
-	//console.log(req.protocol + '://' + req.get('host'))
-	if (req.session.userLogin){
-		if(req.session.userLogin.firstLogon){
-			authorize.changepwdindex(req,res,next);
-		}else{
-			next();	
-		}
-	}else{
-		authorize.index(req,res,next);
-	}
+  //console.log(req.protocol + '://' + req.get('host'))
+  if (req.session.userLogin){
+    if(req.session.userLogin.firstLogon){
+      authorize.changepwdindex(req,res,next);
+    }else{
+      next(); 
+    }
+  }else{
+    authorize.index(req,res,next);
+  }
 };
 
 var attachDB = function(req,res,next){
@@ -114,8 +114,8 @@ var dash = new require('./routes/dashboard_posid');
 app.all('/dashboard/find',attachDB,checkLogin,dash.find);
 app.all('/dashboard/getBranch',attachDB,checkLogin,dash.getBranch);
 app.all('/dashboard/exportxls',attachDB,checkLogin,function(req,res){
-	req.pathfile = __dirname +  "/public";
-	dash.exportXLS(req,res);
+  req.pathfile = __dirname +  "/public";
+  dash.exportXLS(req,res);
 });
 app.all('/dashboard',attachDB,checkLogin,dash.index);
 
@@ -140,7 +140,8 @@ app.all('/config/central_account_edit_update',attachDB,checkLogin,useredit.find_
 
 //-----------------------------------
 app.use('/',attachDB,checkLogin, routes);
-
+//---------------------For English --------
+app.use('/en', attachDB, checkLogin, routes);
 //-------------------
 
 

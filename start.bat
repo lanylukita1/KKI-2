@@ -1,1 +1,1 @@
-node C:\Users\tnfaid\Documents\GitHub\kki2-1\ini_revisi\KKI-2\bin\www
+node C:\Users\tnfaid\Documents\GitHub\kki2-1\revisi_3\KKI-2\bin\www
